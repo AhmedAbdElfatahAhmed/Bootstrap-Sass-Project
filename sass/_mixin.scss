@@ -1,0 +1,13 @@
+@mixin fontFamily($fontName,) {
+  font-family: $fontName;
+}
+
+// @mixin fontFamily($fontName, $fontWeight, $fontPath) {
+//   @font-face {
+//     font-family: $fontName;
+//     src: $fontPath;
+//   }
+// }
+
+
+

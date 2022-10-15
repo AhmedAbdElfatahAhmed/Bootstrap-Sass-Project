@@ -1,0 +1,468 @@
+@import "./_var";
+@import "./mixin";
+// Start General styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "Kaushan Script";
+  src: url("../assets/fonts/Kaushan_Script/KaushanScript-Regular.ttf");
+}
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url("../assets/fonts/Montserrat/static/Montserrat-Regular.ttf");
+}
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url("../assets/fonts/Montserrat/static/Montserrat-Bold.ttf");
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/fonts/Roboto/Roboto-Regular.ttf");
+}
+@font-face {
+  font-family: "Roboto-LightItalic";
+  src: url("../assets/fonts/Roboto/Roboto-LightItalic.ttf");
+}
+.kaushanScript-font {
+  @include fontFamily("Kaushan Script");
+}
+.montserrat-regular-font {
+  @include fontFamily("Montserrat-Regular");
+}
+.montserrat-bold-font {
+  @include fontFamily("Montserrat-Bold");
+}
+.Roboto-font {
+  @include fontFamily("Roboto");
+}
+.Roboto-LightItalic-font {
+  @include fontFamily("Roboto-LightItalic");
+}
+
+h2.title-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background-color: $tertiaryColor;
+}
+// End General styles
+
+// Start header section
+header {
+  background-image: url("../assets/images/bg-header.jpg");
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+  .overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(243, 129, 129, 0.9),
+      rgba(252, 227, 138, 0.9)
+    );
+    height: 100%;
+
+    .navbar-light .navbar-brand,
+    .navbar-light .navbar-nav .nav-link {
+      color: $whiteColor;
+    }
+    .navbar-light .navbar-nav .nav-link.active {
+      color: #fce38a;
+      position: relative;
+    }
+    .navbar-light .navbar-nav .nav-link.active:after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background-color: #fce38a;
+    }
+  }
+  .header-wraper {
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+    h4 {
+      font-size: 3.5rem;
+    }
+    h1 {
+      font-size: 8vw;
+      position: relative;
+    }
+    h1::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background-color: $whiteColor;
+    }
+
+    .carousel-indicators {
+      transform: translateY(80px);
+    }
+    .carousel-indicators [data-bs-target] {
+      width: 150px;
+      margin-left: 70px;
+      position: relative;
+    }
+
+    .carousel-indicators [data-bs-target]::after {
+      content: "";
+      position: absolute;
+      width: 30%;
+      height: 3px;
+      left: 0;
+      top: 0;
+      background-color: $tertiaryColor;
+    }
+  }
+  .text-bottom {
+    bottom: -8px;
+  }
+  .intro {
+    left: 21%;
+  }
+  .work {
+    left: 38%;
+  }
+  .about {
+    left: 56%;
+  }
+  .contacts {
+    left: 73%;
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .carousel-indicators [data-bs-target] {
+      bottom: -100px;
+    }
+    .text-bottom p {
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 575px) {
+    .text-bottom,
+    .carousel-indicators [data-bs-target] {
+      display: none;
+    }
+  }
+}
+// End header section
+
+// Start story-section , Start our team section
+.story-section,
+.our-team-section {
+  p {
+    color: $secondaryColor;
+  }
+  .cards {
+    .overlay {
+      top: 0;
+      background-image: linear-gradient(0deg, #e2cc7b 0%, #db7474 100%);
+      opacity: 0;
+      transition: all 0.5s;
+      box-shadow: 10px 10px $primaryColor;
+    }
+    .card:hover .overlay {
+      opacity: 0.9;
+      transform: translate(-10px, -10px);
+    }
+    .card {
+      cursor: pointer;
+    }
+  }
+}
+// End story-section , End our team section
+
+// start products-section
+.products-section {
+  .products {
+    background-color: $primaryColor;
+    .product {
+      background-color: $primaryColor;
+      height: 200px;
+    }
+  }
+}
+// End products-section
+
+// start services-section
+.services-section {
+  .info-wrapper {
+    i {
+      color: $primaryColor;
+    }
+    p {
+      color: $secondaryColor;
+    }
+  }
+  .serv::after {
+    content: "";
+    position: absolute;
+    background-color: #e5e5e5;
+    height: 1px;
+    width: 100%;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+// End services-section
+
+// Start unique design section
+.unique-design-section {
+  background-image: url("../assets/images/unique-design/bg-unique-design.jpg");
+  height: 105vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  .images-wraper {
+    figure {
+      margin-top: 66px;
+      bottom: -15px;
+    }
+  }
+  figure.long-mobile {
+    bottom: -11%;
+    right: 21%;
+  }
+}
+// End unique design section
+
+//  Start what we do service section
+.what-we-do-service-section {
+  .accordion-body p {
+    color: $secondaryColor;
+  }
+  .accordion-button:not(.collapsed) {
+    background-color: $whiteColor;
+  }
+  .accordion-button:focus {
+    box-shadow: 1px 1px #dfdfdf;
+  }
+}
+// End what we do service section
+
+// Start testimonial section
+.testimonal-section {
+  background-color: #f8f8f8;
+  color: $secondaryColor;
+  q {
+    line-height: 1.5;
+    font-size: 1.1rem;
+    font-style: italic;
+  }
+  span.line {
+    display: inline-block;
+    width: 40px;
+    height: 2px;
+    background-color: $tertiaryColor;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: $secondaryColor;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+  }
+}
+// End testimonial section
+
+//  Start our team section
+.our-team-section {
+  i {
+    background-color: #fce38a;
+    color: $tertiaryColor;
+    transition: all 1s;
+  }
+  i:not(:last-child) {
+    border-right: 1px solid $tertiaryColor;
+  }
+  i:hover {
+    background-color: $tertiaryColor;
+    color: $whiteColor;
+  }
+  span.job {
+    color: $secondaryColor;
+    font-size: 0.8rem;
+  }
+}
+//  End our team section
+
+// Start brand section
+.brand-section {
+  background-color: #f8f8f8;
+}
+// End brand section
+
+// Start our work section
+.our-work-section {
+  p.text {
+    color: $secondaryColor;
+  }
+
+  .overlay {
+    top: 0;
+    background-image: linear-gradient(0deg, #e2cc7b 0%, #db7474 100%);
+    opacity: 0;
+    transition: all 0.5s;
+  }
+  figure:hover .overlay {
+    opacity: 0.9;
+  }
+}
+// End our work section
+
+// Start happy client section
+.happy-client-section {
+  background-image: url("../assets/images/happy-client/bg-happy-client.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  span.job {
+    color: $secondaryColor;
+    font-size: 0.9rem;
+    position: relative;
+  }
+  span.job::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background-color: $tertiaryColor;
+  }
+  p {
+    color: $secondaryColor;
+  }
+}
+// End happy client section
+
+// Start blog section
+.blog-section {
+  .row {
+    i {
+      color: $primaryColor;
+    }
+    span {
+      color: $secondaryColor;
+      font-size: 0.8rem;
+    }
+  }
+  .card {
+    border: none;
+    p {
+      color: $secondaryColor;
+      font-size: 0.9rem;
+    }
+    .date {
+      background-color: $primaryColor;
+      bottom: 110px;
+      left: -8px;
+    }
+  }
+}
+// End blog section
+
+// Start map section
+.map-section {
+  background-image: url("../assets/images/map/bg-map.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: $tertiaryColor;
+  span::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background-color: $tertiaryColor;
+  }
+}
+// End map section
+
+// Start footer section
+footer {
+  .left-col {
+    h4,
+    p {
+      color: $secondaryColor;
+    }
+    p {
+      font-size: 0.81rem;
+    }
+    .followers span.follower {
+      font-size: 0.85rem;
+    }
+    .social-icons {
+      span {
+        font-size: 0.81rem;
+        color: $secondaryColor;
+      }
+      i {
+        color: $primaryColor;
+      }
+    }
+    input {
+      outline: none;
+      border: 1px solid #e5e5e5;
+    }
+    .btn {
+      background-color: $primaryColor;
+    }
+  }
+  .left-col::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #e5e5e5;
+    bottom: 95px;
+  }
+  .middle-col {
+    p {
+      font-size: 0.75rem;
+      color: $secondaryColor;
+    }
+    .info span {
+      font-size: 0.7rem;
+      color: $secondaryColor;
+      transform: translateY(-15px);
+    }
+  }
+  .right-col {
+    span.view {
+      font-size: 0.9rem;
+      color: $secondaryColor;
+    }
+    span.title {
+      margin-left: 63px;
+    }
+  }
+  p.copyright {
+    border-top: 1px solid #e5e5e5;
+  }
+  .copyright span {
+    color: $tertiaryColor;
+  }
+}
+// End footer section
