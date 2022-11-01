@@ -81,10 +81,9 @@ header {
     .navbar-light .navbar-nav .nav-link.active:after {
       content: "";
       position: absolute;
-      left: 50%;
+      left: 0;
       bottom: 0;
-      transform: translateX(-50%);
-      width: 60px;
+      width: 68px;
       height: 3px;
       background-color: #fce38a;
     }
